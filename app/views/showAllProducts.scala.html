@@ -1,0 +1,23 @@
+@* showAllPro Template File *@
+@(products: List[Product])
+@main("Products") {
+	
+	
+	
+
+	<ul>
+		@for(product <- products){
+		<li>@product.getName() - Category: @product.category.getName()</li>
+		}
+	</ul>
+	
+	
+	<ul>
+		<p><a href="@routes.ProductController.newProductForm">Add a product!</a></p>
+		<h4>Products (@products.size).</h4>
+		@for(product <- products){
+			<li><a href="/product/@product.getId()">@product.getName()</a></li>
+		}
+	</ul>
+	</div>
+}

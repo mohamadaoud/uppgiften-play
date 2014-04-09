@@ -1,0 +1,39 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.DefaultController.index()
+
+# Login/logout
+GET     /                			controllers.MyAuthentication.showLoginForm()
+POST    /							controllers.MyAuthentication.login()
+POST    /logout						controllers.MyAuthentication.logout()
+
+# Products
+GET     /show-all-products			controllers.ProductController.showAllProducts()
+GET   	/new-product      			controllers.ProductController.newProductForm()
+POST    /new-product             	controllers.ProductController.newProduct()
+GET		/product/:id				controllers.ProductController.showProduct(id:Int)
+
+#Users
+GET     /show-new-user              controllers.UserController.showNewUser()
+GET		/new-user					controllers.UserController.newUserForm()
+POST	/new-user					controllers.UserController.newUser()
+GET		/user/:id					controllers.UserController.showUser(id: Int)
+
+#Categories
+GET     /show-all-categories		controllers.CategoryController.showAllCategories()
+GET   	/new-category     			controllers.CategoryController.newCategoryForm()
+POST	/new-category				controllers.CategoryController.newCategory()
+GET		/category/:id				controllers.CategoryController.showCategory(id: Int)
+
+#ShoppingBasket
+GET     /list-all-cart				controllers.ShoppingBasketController.listAllCart()
+POST    /order-product				controllers.ShoppingBasketController.order()
+POST  	/new-shoppingbasket         controllers.ShoppingBasketController.newShoppingBasket()
+GET		/shoppingbasket/:id			controllers.ShoppingBasketController.showShoppingBasket(id: Int)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

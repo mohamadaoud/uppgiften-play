@@ -1,0 +1,39 @@
+
+@(products: List[Product], categories: List[Category], users: List[User], shopping: List[ShoppingBasket])
+
+
+@main("Home") {
+	<h4>List of all products (@products.size).</h4>
+	
+	<ul>
+		@for(product <- products){
+			<li><a href="/product/@product.getId()">@product.getName()</a></li>
+		}
+	</ul>
+	
+	<h4>Categories (@categories.size).</h4>
+	
+	<ul>
+		@for(category <- categories){
+			<li><a href="/category/@category.getId()">@category.getName()</a></li>
+		}
+	</ul>
+	
+	<h4>Users (@users.size).</h4>
+	
+	<ul>
+		@for(user <- users){
+			<li><a href="/user/@user.getId()">@user.getName() </a></li>
+		}
+	</ul>
+	
+	<h4>Shopping Basket (@shopping.size).</h4>
+	
+	<ul>
+		@for(shoppingBasket <- shopping){
+			<li><a href="/shoppingbasket/@shoppingBasket.getShoppingBaskedId()">@shoppingBasket.getShoppingBaskedId()</a></li>
+		}
+	</ul>
+	
+	
+}

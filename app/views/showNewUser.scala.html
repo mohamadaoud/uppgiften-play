@@ -1,0 +1,8 @@
+@* showNewUser Template File *@
+@(users: List[User])
+@main("User"){
+	
+	<h3>Sign up!</h3>
+	<hr>
+	<p><a href="@routes.UserController.newUserForm">Register me!</a></p>
+}

@@ -1,0 +1,13 @@
+@* showUser Template File *@
+@(user: User)
+
+@main("User.") {
+<h1>Details for user</h1>
+
+<ul>
+<li>Name: @user.getName() <br>
+<li>Address:  @user.getAddress </li>
+<li>Telephone Number: @user.getTeleNumber()</li>
+<li>E-mail: <a href="mailto:#">@user.getEmail()</a></li>
+</ul>
+}

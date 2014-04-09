@@ -1,0 +1,38 @@
+@(products: List[Product], users: List[User], shoppingbasket: List[ShoppingBasket] )
+@main("Shopping Basket"){
+	<table class="form1 table table-bordered" style="
+    width:600px;
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color:green;
+    font-family:"Times New Roman",Georgia,Serif;
+    font-color :white;
+">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Cost</th>
+            <th>Category</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="order-font">
+          @for(product <- products){
+          	@for(shoppingbasket <- shoppingbasket){
+         		 
+           		<td>@product.getName</td>
+           		<td>@product.getCost</td>
+           		<td>@product.category.getName</td>
+           		<td>@shoppingbasket.getQuantity</td>
+          		</tr>
+         	 	}
+           }
+        </tbody>
+      </table>
+      <form action="/order-product" method="post" role="form">
+		<button type="submit" class="btn btn-default" style="margin-left: 2%;">Order</button></a>
+		</form>
+      <p></p>
+         
+}

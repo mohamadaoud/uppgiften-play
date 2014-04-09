@@ -1,0 +1,19 @@
+@(categories: List[Category])
+@main("Categories") {	
+	
+	<ul>
+		@for(category <- categories){
+		<li>@category.getName()</li>
+		}
+	</ul>
+	
+	<ul>
+		<p><a href="@routes.CategoryController.newCategoryForm">Add a category!</a></p>
+		<h4>Categories (@categories.size).</h4>
+		@for(category <- categories){
+			<li><a href="/category/@category.getId()">@category.getName()</a></li>
+		}
+	</ul>
+
+}
+	

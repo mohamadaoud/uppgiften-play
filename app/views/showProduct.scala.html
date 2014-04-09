@@ -1,0 +1,20 @@
+
+@(product: Product)	
+@main("Product details") {
+
+<ul>
+	<div class="large-4 columns">
+		<h3>Product Details</h1>
+		<form action="@routes.ShoppingBasketController.newShoppingBasket" method="post" role="form">
+			<li>Name: @product.getName() <br> </li>
+			<li>Description:  @product.getDescription </li>
+			<li>Price: @product.getCost() </li>
+  			<li><label for="quantity">Quantity</label></li>
+  			<input type = "number" class="form-control" style="width: 150px; id="quantity" name="quantity" placeholder="Quantity...">
+  		
+			<button type="submit" class="btn btn-default">Add to Cart</button>
+		</form>
+	</div>
+</ul>
+<p></p>
+}
